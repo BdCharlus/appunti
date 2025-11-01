@@ -1,0 +1,54 @@
+\section{Topologie deboli}
+
+Si consideri un insieme \(X\). Fissiamo una famiglia arbitraria \(\{Y_i\}_{i \in I}\) di spazi topologici. Consideriamo una famiglia di applicazioni \(\{\phi_i : X \to Y_i\}\). Cerchiamo di definire la topologia meno fine che rende continue tutte le applicazioni \(\phi_i\).
+
+Sicuramente questa topologia contiene tutte le controimmagini degli elementi delle topologie dei vari \(Y_i\). In particolare, la topologia cercata è quella generata da tali controimmagini come sottobase. Chiamiamo questi sottoinsiemi \(\{U_{\lambda}\}_{\lambda \in \Lambda}\). 
+
+La topologia generata da una sottobase è definita come la topologia generata (come base) dalle intersezioni finite di elementi della sottobase. 
+
+\begin{definition}{Topologia iniziale}
+    Sia \(X\) un insieme e sia \(\{\phi_i : X \to Y_i\}_{i \in I}\) una famiglia di applicazioni in spazi topologici. La \emph{topologia iniziale} su \(X\) indotta dalle applicazioni \(\phi_i\) è la topologia generata come base dalle intersezioni finite delle controimmagini degli aperti dei vari \(Y_i\).
+\end{definition}
+
+\begin{theorem}
+    Sia \((X, \tau)\) uno spazio topologico con \(\tau\) topologia iniziale indotta da una famiglia di applicazioni \(\{\phi_i : X \to Y_i\}_{i \in I}\). Si ha che: 
+    \begin{enumerate}
+        \item \(\tau\) è la topologia meno fine che rende continue tutte le applicazioni \(\phi_i\);
+        \item data \(\{x_n\} \subset X\), 
+        \[
+            x_n \to x \text{ in } (X, \tau) \iff \phi_i(x_n) \to \phi_i(x) \text{ in } Y_i, \quad \forall i \in I;
+        \]
+        \item sia \(Z\) uno spazio tolologico e sia \(\psi : Z \to X\) un'applicazione, allora 
+        \[
+            \psi \text{ è continua } \iff \phi_i \circ \psi \text{ è continua in } Y_i, \quad \forall i \in I.
+        \]
+    \end{enumerate}
+\end{theorem}
+
+\begin{proof}
+    La dimostrazione è lasciata come esercizio (vedere Brezis, Proposizione 3.1 e 3.2). 
+\end{proof}
+
+\paragraph{Topologia debole.} Sia \(X\) uno spazio di Banach. Tale spazio ha una topologia, detta \emph{topologia forte}, indotta dalla norma. Inoltre, al variare di \(f \in X'\) possiamo considerare le applicazioni
+\[
+    \phi_f : X \to \mathbb R, \quad \phi_f(x) := \langle f, x \rangle. 
+\]
+\begin{definition}{Topologia debole}
+    Chiamiamo \emph{topologia debole} su \(X\) la topologia iniziale indotta dalla famiglia di applicazioni \(\{\phi_f\}_{f \in X'}\). La indichiamo con \(\sigma(X, X')\). Se \(\{x_n\}\) è una successione che converge a \(x\) in tale topologia, scriviamo \(x_n \rightharpoonup x\) e diciamo che \(\{x_n\}\) \emph{converge debolmente} a \(x\).
+\end{definition}
+
+\begin{proposition}
+    Sia \(X\) uno spazio di Banach e \(\{x_n\} \subset X\) una successione. Allora:
+    \begin{enumerate}
+        \item \(x_n \rightharpoonup x\) in \(\sigma(X, X')\) \(\iff \phi_f(x_n) \to \phi_f(x)\) in \(\mathbb R\), \(\forall f \in X'\);
+        \item se \(x_n \to x\) allora \(x_n \rightharpoonup x\); 
+        \item se \(x_n \rightharpoonup x\) allora la successione \(\{x_n\}\) è limitata in norma e si ha che \(\|x\| \leq \liminf_{n \to \infty} \|x_n\|\);
+        \item se \(f_n \to f\) in \(X'\) e \(x_n \rightharpoonup x\) allora \(\langle f_n, x_n \rangle \to \langle f, x \rangle\) in \(\mathbb R\). 
+    \end{enumerate}
+\end{proposition}
+
+\begin{proof}
+    Il terzo punto segue da Banach - Steinhaus. 
+\end{proof}
+
+
